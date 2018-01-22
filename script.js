@@ -44,3 +44,13 @@ document.querySelector('#phoneButton').addEventListener('click', function printR
   bankBalanceInput.value = ''
   spendingThresholdInput.value = ''
 })
+
+// Day 3: Change Background Colors
+
+document.querySelector('#changeColorButton').addEventListener('click', function () {
+  if (document.querySelector('body').style.backgroundColor === 'green') {
+    document.querySelector('body').style.backgroundColor = 'blue'
+  } else {
+    document.querySelector('body').style.backgroundColor = 'green'
+  }
+})
