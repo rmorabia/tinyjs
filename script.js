@@ -48,9 +48,9 @@ document.querySelector('#phoneButton').addEventListener('click', function printR
 // Day 3: Change Background Colors
 
 document.querySelector('#changeColorButton').addEventListener('click', function () {
-  if (document.querySelector('body').style.backgroundColor === 'green') {
-    document.querySelector('body').style.backgroundColor = 'blue'
+  if (document.querySelector('html').style.backgroundColor === 'green') {
+    document.querySelector('html').style.backgroundColor = 'blue'
   } else {
-    document.querySelector('body').style.backgroundColor = 'green'
+    document.querySelector('html').style.backgroundColor = 'green'
   }
 })
