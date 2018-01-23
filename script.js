@@ -54,3 +54,51 @@ document.querySelector('#changeColorButton').addEventListener('click', function 
     document.querySelector('html').style.backgroundColor = 'green'
   }
 })
+
+// Day 4: Score Keeper
+
+var playerOneButton = document.querySelector('#playerOneButton')
+var playerTwoButton = document.querySelector('#playerTwoButton')
+var playerOneValue = document.querySelector('#playerOneValue')
+var playerTwoValue = document.querySelector('#playerTwoValue')
+var playingToInput = document.querySelector('#playingToInput')
+var resetButton = document.querySelector('#resetButton')
+var playingTo = document.querySelector('#playingTo')
+
+var playerOneNumber = 0
+var playerTwoNumber = 0
+var playingToNumber = 5
+
+playerOneButton.addEventListener('click', function () {
+  playerOneNumber = playerOneNumber + 1
+  playerOneValue.textContent = playerOneNumber
+  if (playerOneNumber == playingToNumber) {
+    playerOneValue.style.color = 'green'
+    playerOneNumber = playerOneNumber
+  }
+})
+
+playerTwoButton.addEventListener('click', function () {
+  playerTwoNumber = playerTwoNumber + 1
+  playerTwoValue.textContent = playerTwoNumber
+  if (playerTwoNumber == playingToNumber) {
+    playerTwoValue.style.color = 'green'
+  }
+})
+
+document.querySelector('#playingToButton').addEventListener('click', function () {
+  playingToNumber = playingToInput.value
+  playingTo.textContent = playingToInput.value
+})
+
+resetButton.addEventListener('click', function () {
+  playerOneNumber = 0
+  playerTwoNumber = 0
+  playingToNumber = 5
+  playerOneValue.innerHTML = '0'
+  playerTwoValue.innerHTML = '0'
+  playerOneValue.style.color = 'black'
+  playerTwoValue.style.color = 'black'
+  playingToInput.value = ''
+  playingTo.textContent = '5'
+})
