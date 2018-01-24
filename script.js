@@ -69,7 +69,7 @@ var playerOneNumber = 0
 var playerTwoNumber = 0
 var playingToNumber = 5
 
-function reset () {
+resetButton.addEventListener('click', function () {
   playerOneNumber = 0
   playerTwoNumber = 0
   playingToNumber = 5
@@ -79,10 +79,6 @@ function reset () {
   playerTwoValue.style.color = 'black'
   playingToInput.value = ''
   playingTo.textContent = '5'
-}
-
-resetButton.addEventListener('click', function () {
-  reset();
 })
 
 playerOneButton.addEventListener('click', function () {
@@ -122,4 +118,11 @@ playerTwoButton.addEventListener('click', function () {
 document.querySelector('#playingToInput').addEventListener('change', function () {
   playingToNumber = playingToInput.value
   playingTo.textContent = playingToInput.value
+  playerOneNumber = 0
+  playerTwoNumber = 0
+  playerOneValue.textContent = '0'
+  playerTwoValue.textContent = '0'
+  playerOneValue.style.color = 'black'
+  playerTwoValue.style.color = 'black'
+  playingToInput.value = ''
 })
