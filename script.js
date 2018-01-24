@@ -69,29 +69,6 @@ var playerOneNumber = 0
 var playerTwoNumber = 0
 var playingToNumber = 5
 
-playerOneButton.addEventListener('click', function () {
-  playerOneValue.textContent = playerOneNumber
-  if (playerOneNumber >= playingToNumber) {
-    playerOneValue.style.color = 'green'
-  } else if (playerOneNumber < playingToNumber) {
-    playerOneNumber = playerOneNumber + 1
-  }
-})
-
-playerTwoButton.addEventListener('click', function () {
-  playerTwoValue.textContent = playerTwoNumber
-  if (playerTwoNumber >= playingToNumber) {
-    playerTwoValue.style.color = 'green'
-  } else if (playerTwoNumber < playingToNumber) {
-    playerTwoNumber = playerTwoNumber + 1
-  }
-})
-
-document.querySelector('#playingToInput').addEventListener('keyup', function () {
-  playingToNumber = playingToInput.value
-  playingTo.textContent = playingToInput.value
-})
-
 resetButton.addEventListener('click', function () {
   playerOneNumber = 0
   playerTwoNumber = 0
@@ -102,4 +79,48 @@ resetButton.addEventListener('click', function () {
   playerTwoValue.style.color = 'black'
   playingToInput.value = ''
   playingTo.textContent = '5'
+})
+
+playerOneButton.addEventListener('click', function () {
+  if (playerTwoNumber >= playingToNumber) {
+    playerOneValue.textContent = playerOneNumber
+  } else if (playerOneNumber >= playingToNumber) {
+    playerOneValue.textContent = playerOneNumber
+  } else if (playerOneNumber <= playingToNumber) {
+    playerOneNumber = playerOneNumber + 1
+    playerOneValue.textContent = playerOneNumber
+  }
+})
+
+playerOneButton.addEventListener('click', function () {
+  if (playerOneNumber >= playingToNumber) {
+    playerOneValue.style.color = 'green'
+  }
+})
+
+playerTwoButton.addEventListener('click', function () {
+  if (playerOneNumber >= playingToNumber) {
+    playerTwoValue.textContent = playerTwoNumber
+  } else if (playerTwoNumber >= playingToNumber) {
+    playerTwoValue.textContent = playingToNumber
+  } else if (playerTwoNumber < playingToNumber) {
+    playerTwoNumber = playerTwoNumber + 1
+    playerTwoValue.textContent = playerTwoNumber
+  }
+})
+
+playerTwoButton.addEventListener('click', function () {
+  if (playerTwoNumber >= playingToNumber) {
+    playerTwoValue.style.color = 'green'
+  }
+})
+
+document.querySelector('#playingToInput').addEventListener('keyup', function () {
+  playingToNumber = playingToInput.value
+  playingTo.textContent = playingToInput.value
+})
+
+document.querySelector('#playingToInput').addEventListener('click', function () {
+  playingToNumber = playingToInput.value
+  playingTo.textContent = playingToInput.value
 })
