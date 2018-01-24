@@ -115,12 +115,7 @@ playerTwoButton.addEventListener('click', function () {
   }
 })
 
-document.querySelector('#playingToInput').addEventListener('keyup', function () {
-  playingToNumber = playingToInput.value
-  playingTo.textContent = playingToInput.value
-})
-
-document.querySelector('#playingToInput').addEventListener('click', function () {
+document.querySelector('#playingToInput').addEventListener('change', function () {
   playingToNumber = playingToInput.value
   playingTo.textContent = playingToInput.value
 })
