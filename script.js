@@ -124,3 +124,14 @@ document.querySelector('#playingToInput').addEventListener('click', function () 
   playingToNumber = playingToInput.value
   playingTo.textContent = playingToInput.value
 })
+
+// Day 5: Random Colors are Fun
+
+function color() {
+  var hex = '#' + Math.random().toString(16).slice(2, 8)
+  document.querySelector('#randomColors').style.color = hex
+}
+
+setInterval (function() {
+  color()
+}, 1000)
