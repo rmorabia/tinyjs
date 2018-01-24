@@ -122,5 +122,4 @@ playerTwoButton.addEventListener('click', function () {
 document.querySelector('#playingToInput').addEventListener('change', function () {
   playingToNumber = playingToInput.value
   playingTo.textContent = playingToInput.value
-  reset();
 })
