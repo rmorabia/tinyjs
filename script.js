@@ -70,23 +70,24 @@ var playerTwoNumber = 0
 var playingToNumber = 5
 
 playerOneButton.addEventListener('click', function () {
-  playerOneNumber = playerOneNumber + 1
   playerOneValue.textContent = playerOneNumber
-  if (playerOneNumber == playingToNumber) {
+  if (playerOneNumber >= playingToNumber) {
     playerOneValue.style.color = 'green'
-    playerOneNumber = playerOneNumber
+  } else if (playerOneNumber < playingToNumber) {
+    playerOneNumber = playerOneNumber + 1
   }
 })
 
 playerTwoButton.addEventListener('click', function () {
-  playerTwoNumber = playerTwoNumber + 1
   playerTwoValue.textContent = playerTwoNumber
-  if (playerTwoNumber == playingToNumber) {
+  if (playerTwoNumber >= playingToNumber) {
     playerTwoValue.style.color = 'green'
+  } else if (playerTwoNumber < playingToNumber) {
+    playerTwoNumber = playerTwoNumber + 1
   }
 })
 
-document.querySelector('#playingToButton').addEventListener('click', function () {
+document.querySelector('#playingToInput').addEventListener('keyup', function () {
   playingToNumber = playingToInput.value
   playingTo.textContent = playingToInput.value
 })
@@ -95,8 +96,8 @@ resetButton.addEventListener('click', function () {
   playerOneNumber = 0
   playerTwoNumber = 0
   playingToNumber = 5
-  playerOneValue.innerHTML = '0'
-  playerTwoValue.innerHTML = '0'
+  playerOneValue.textContent = '0'
+  playerTwoValue.textContent = '0'
   playerOneValue.style.color = 'black'
   playerTwoValue.style.color = 'black'
   playingToInput.value = ''
