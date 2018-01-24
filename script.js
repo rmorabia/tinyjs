@@ -115,14 +115,16 @@ playerTwoButton.addEventListener('click', function () {
   }
 })
 
-document.querySelector('#playingToInput').addEventListener('keyup', function () {
+document.querySelector('#playingToInput').addEventListener('change', function () {
   playingToNumber = playingToInput.value
   playingTo.textContent = playingToInput.value
-})
-
-document.querySelector('#playingToInput').addEventListener('click', function () {
-  playingToNumber = playingToInput.value
-  playingTo.textContent = playingToInput.value
+  playerOneNumber = 0
+  playerTwoNumber = 0
+  playerOneValue.textContent = '0'
+  playerTwoValue.textContent = '0'
+  playerOneValue.style.color = 'black'
+  playerTwoValue.style.color = 'black'
+  playingToInput.value = ''
 })
 
 // Day 5: Random Colors are Fun
